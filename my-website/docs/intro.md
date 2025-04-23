@@ -1,47 +1,28 @@
----
-sidebar_position: 1
----
+# Introducción
 
-# Tutorial Intro
+Bienvenido a esta guía completa sobre las Herramientas de Desarrollo (DevTools). Si eres nuevo en el desarrollo web o simplemente quieres entender mejor cómo funcionan las páginas web que visitas a diario, has llegado al lugar correcto.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## ¿Qué son las DevTools?
 
-## Getting Started
+Las Herramientas de Desarrollo (DevTools) son un conjunto de utilidades integradas en los navegadores modernos que permiten a los desarrolladores inspeccionar, depurar y optimizar sitios web. Piensa en ellas como una "sala de máquinas" que te permite ver lo que está ocurriendo detrás de una página web.
 
-Get started by **creating a new site**.
+## ¿Por qué aprender a usarlas?
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Para curiosos**: Entenderás cómo funcionan las páginas web que visitas
+- **Para estudiantes**: Aprenderás técnicas prácticas de desarrollo web
+- **Para profesionales**: Mejorarás tus habilidades de depuración y optimización
+- **Para creadores de contenido**: Podrás solucionar problemas en tu sitio web sin depender de otros
 
-### What you'll need
+## ¿Qué aprenderás en esta guía?
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Esta guía te llevará paso a paso por las principales secciones de las DevTools:
 
-## Generate a new site
+1. **Elements**: Para explorar y editar el HTML y CSS de cualquier página
+2. **Styles**: Para modificar estilos y entender el diseño visual
+3. **Console**: Para interactuar con JavaScript y ver mensajes de error
+4. **Network**: Para analizar el rendimiento y las solicitudes web
+5. **Otros paneles útiles**: Para tareas más específicas
 
-Generate a new Docusaurus site using the **classic template**.
+Cada sección incluye explicaciones claras, capturas de pantalla y ejercicios prácticos para que puedas aprender haciendo.
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+¡Comencemos este viaje juntos hacia el mundo de las herramientas de desarrollo web!
