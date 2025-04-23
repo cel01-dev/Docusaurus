@@ -2,41 +2,42 @@ import React, { useEffect } from 'react';
 import DocSidebar from '@theme-original/DocSidebar';
 
 import {
-  Boxes,
-  Smartphone,
-  DownloadCloud,
-  Users,
-  BookOpen,
+  BookOpenText,
   Code,
+  PanelLeftOpen,
+  FilePenLine,
+  SquareDashedMousePointer,
   Star,
-  Package,
+  Palette,
   Folder,
+  MonitorX,
   Settings,
   Terminal,
-  PenTool,
-  Plug,
-  Utensils
+  FolderCode,
+  ServerCog,
+  Network,
+  Boxes
 } from 'lucide-react';
 
 function getIconForItem(item) {
   if (item.label && typeof item.label === 'string') {
-    if (item.label.includes('Tutorial - Basics')) return <Boxes size={18} />;
-    if (item.label.includes('Create a Document')) return <Smartphone size={18} />;
-    if (item.label.includes('Blog')) return <DownloadCloud size={18} />;
-    if (item.label.includes('Reseller')) return <Users size={18} />;
-    if (item.label.includes('Guias adicionales')) return <BookOpen size={18} />;
-    if (item.label.includes('Devs')) return <Code size={18} />;
-    if (item.label.includes('Esenciales')) return <Star size={18} />;
-    if (item.label.includes('Complementarios')) return <Package size={18} />;
-    if (item.label.includes('Rubro')) return <Folder size={18} />;
-    if (item.label.includes('Específicos')) return <PenTool size={18} />;
-    if (item.label.includes('Configuración')) return <Settings size={18} />;
-    if (item.label.includes('API')) return <Terminal size={18} />;
-    if (item.label.includes('Custom')) return <PenTool size={18} />;
-    if (item.label.includes('Devops')) return <Terminal size={18} />;
-    if (item.label.includes('Manual de Usuario')) return <BookOpen size={18} />;
-    if (item.label.includes('Plugins')) return <Plug size={18} />;
-    if (item.label.includes('Mozo.pe')) return <Utensils size={18} />;
+    if (item.label.includes('Intro')) return <BookOpenText size={18} />;
+    if (item.label.includes('Cómo abrir')) return <Code size={18} />;
+    if (item.label.includes('Qué es el panel')) return <PanelLeftOpen size={18} />;
+    if (item.label.includes('Cómo editar')) return <FilePenLine size={18} />;
+    if (item.label.includes('Cómo resaltar')) return <SquareDashedMousePointer size={18} />;
+    if (item.label.includes('Cómo activar')) return <Code size={18} />;
+    if (item.label.includes('Cómo agregar')) return <Star size={18} />;
+    if (item.label.includes('Cómo inspeccionar')) return <Palette size={18} />;
+    if (item.label.includes('Qué es la consola')) return <Folder size={18} />;
+    if (item.label.includes('Cómo interpretar')) return <MonitorX size={18} />;
+    if (item.label.includes('Cómo ejecutar')) return <Settings size={18} />;
+    if (item.label.includes('Consejos')) return <Terminal size={18} />;
+    if (item.label.includes('Cómo ver')) return <FolderCode size={18} />;
+    if (item.label.includes('Cómo analizar')) return <ServerCog size={18} />;
+    if (item.label.includes('Diagnóstico')) return <Network size={18} />;
+    if (item.label.includes('Otros Paneles')) return <PanelLeftOpen size={18} />;
+    if (item.label.includes('Ejercicios')) return <Boxes size={18} />;
   }
   return null;
 }
