@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-devtools/network/ver-archivos" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Cómo ver y analizar archivos con Network | DevTools</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://cel01-dev.github.io/Docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://cel01-dev.github.io/Docusaurus/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://cel01-dev.github.io/Docusaurus/docs/devtools/network/ver-archivos"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Cómo ver y analizar archivos con Network | DevTools"><meta data-rh="true" name="description" content="El panel Network de DevTools te permite examinar detalladamente cada archivo y recurso que tu navegador descarga. Aprender a analizar estos archivos es esencial para entender cómo funciona una página web y para solucionar problemas."><meta data-rh="true" property="og:description" content="El panel Network de DevTools te permite examinar detalladamente cada archivo y recurso que tu navegador descarga. Aprender a analizar estos archivos es esencial para entender cómo funciona una página web y para solucionar problemas."><link data-rh="true" rel="icon" href="/Docusaurus/img/logo.png"><link data-rh="true" rel="canonical" href="https://cel01-dev.github.io/Docusaurus/docs/devtools/network/ver-archivos"><link data-rh="true" rel="alternate" href="https://cel01-dev.github.io/Docusaurus/docs/devtools/network/ver-archivos" hreflang="es"><link data-rh="true" rel="alternate" href="https://cel01-dev.github.io/Docusaurus/docs/devtools/network/ver-archivos" hreflang="x-default"><link rel="stylesheet" href="/Docusaurus/assets/css/styles.5f3f781a.css">
+<script src="/Docusaurus/assets/js/runtime~main.9dde59b5.js" defer="defer"></script>
+<script src="/Docusaurus/assets/js/main.2ece78cd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/Docusaurus/img/logo.png"><div role="region" aria-label="Saltar al contenido principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Saltar al contenido principal</a></div><nav aria-label="Principal" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Alternar barra lateral" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/Docusaurus/"><div class="navbar__logo"><img src="/Docusaurus/img/logo.png" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/Docusaurus/img/logo.png" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">DevTools</b></a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/cel01-dev/Docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Cambiar entre modo oscuro y claro (actualmente modo claro)" aria-label="Cambiar entre modo oscuro y claro (actualmente modo claro)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volver al principio" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Barra lateral de Documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/Docusaurus/docs/intro">Guía DevTools</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/Docusaurus/docs/intro"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text" aria-hidden="true"><path d="M12 7v14"></path><path d="M16 12h2"></path><path d="M16 8h2"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path><path d="M6 12h2"></path><path d="M6 8h2"></path></svg></span><span>Introducción</span></div></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/Docusaurus/docs/devtools/abrir/como-abrir">Abrir DevTools</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/Docusaurus/docs/devtools/elements/que-es-elements">Panel Elements</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/Docusaurus/docs/devtools/styles/que-es-styles">Panel Styles</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/Docusaurus/docs/devtools/console/que-es-console">Panel Console</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/Docusaurus/docs/devtools/network/que-es-network">Panel Network</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/Docusaurus/docs/devtools/network/que-es-network"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-panel-left-open" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="m14 9 3 3-3 3"></path></svg></span><span>¿Qué es el panel Network?</span></div></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/Docusaurus/docs/devtools/network/ver-archivos"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-code" aria-hidden="true"><path d="M10 10.5 8 13l2 2.5"></path><path d="m14 10.5 2 2.5-2 2.5"></path><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"></path></svg></span><span>Cómo ver y analizar archivos con Network</span></div></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/Docusaurus/docs/devtools/network/analizar-respuestas"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server-cog" aria-hidden="true"><path d="m10.852 14.772-.383.923"></path><path d="M13.148 14.772a3 3 0 1 0-2.296-5.544l-.383-.923"></path><path d="m13.148 9.228.383-.923"></path><path d="m13.53 15.696-.382-.924a3 3 0 1 1-2.296-5.544"></path><path d="m14.772 10.852.923-.383"></path><path d="m14.772 13.148.923.383"></path><path d="M4.5 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-.5"></path><path d="M4.5 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-.5"></path><path d="M6 18h.01"></path><path d="M6 6h.01"></path><path d="m9.228 10.852-.923-.383"></path><path d="m9.228 13.148-.923.383"></path></svg></span><span>Cómo analizar respuestas del servidor</span></div></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/Docusaurus/docs/devtools/network/diagnostico"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"></rect><rect x="2" y="16" width="6" height="6" rx="1"></rect><rect x="9" y="2" width="6" height="6" rx="1"></rect><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path d="M12 12V8"></path></svg></span><span>Diagnóstico de problemas con Network</span></div></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/Docusaurus/docs/devtools/otros-paneles"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-panel-left-open" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="m14 9 3 3-3 3"></path></svg></span><span>Otros Paneles Importantes de DevTools</span></div></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/Docusaurus/docs/devtools/practico"><div class="sidebar-item-with-icon"><span class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes" aria-hidden="true"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"></path><path d="m7 16.5-4.74-2.85"></path><path d="m7 16.5 5-3"></path><path d="M7 16.5v5.17"></path><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"></path><path d="m17 16.5-5-3"></path><path d="m17 16.5 4.74-2.85"></path><path d="M17 16.5v5.17"></path><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"></path><path d="M12 8 7.26 5.15"></path><path d="m12 8 4.74-2.85"></path><path d="M12 13.5V8"></path></svg></span><span>Ejercicios Prácticos con DevTools</span></div></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Rastro de navegación"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Página de Inicio" class="breadcrumbs__link" href="/Docusaurus/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Guía DevTools</span><meta itemprop="position" content="1"></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Panel Network</span><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Cómo ver y analizar archivos con Network</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">En esta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Cómo ver y analizar archivos con Network</h1></header>
+<p>El panel Network de DevTools te permite examinar detalladamente cada archivo y recurso que tu navegador descarga. Aprender a analizar estos archivos es esencial para entender cómo funciona una página web y para solucionar problemas.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cómo-iniciar-la-captura-de-solicitudes">Cómo iniciar la captura de solicitudes<a href="#cómo-iniciar-la-captura-de-solicitudes" class="hash-link" aria-label="Enlace directo al Cómo iniciar la captura de solicitudes" title="Enlace directo al Cómo iniciar la captura de solicitudes">​</a></h2>
+<ol>
+<li>Abre DevTools y ve a la pestaña Network</li>
+<li>Asegúrate de que el botón de grabación (círculo rojo) esté activado</li>
+<li>Recarga la página usando:<!-- -->
+<ul>
+<li>El botón de recarga del navegador</li>
+<li>Atajo de teclado: F5 o Ctrl+R (Cmd+R en Mac)</li>
+<li>Recarga forzada (sin caché): Ctrl+Shift+R (Cmd+Shift+R en Mac)</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="filtrar-y-organizar-solicitudes">Filtrar y organizar solicitudes<a href="#filtrar-y-organizar-solicitudes" class="hash-link" aria-label="Enlace directo al Filtrar y organizar solicitudes" title="Enlace directo al Filtrar y organizar solicitudes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filtros-predeterminados">Filtros predeterminados<a href="#filtros-predeterminados" class="hash-link" aria-label="Enlace directo al Filtros predeterminados" title="Enlace directo al Filtros predeterminados">​</a></h3>
+<p>En la barra superior del panel Network encontrarás filtros rápidos:</p>
+<ul>
+<li><strong>All</strong>: Muestra todas las solicitudes</li>
+<li><strong>Fetch/XHR</strong>: Solicitudes JavaScript (AJAX)</li>
+<li><strong>JS</strong>: Archivos JavaScript</li>
+<li><strong>CSS</strong>: Hojas de estilo</li>
+<li><strong>Img</strong>: Imágenes</li>
+<li><strong>Media</strong>: Audio/video</li>
+<li><strong>Font</strong>: Fuentes web</li>
+<li><strong>Doc</strong>: Documentos HTML y otros documentos</li>
+<li><strong>WS</strong>: WebSockets</li>
+<li><strong>Manifest</strong>: Archivos de manifiesto de aplicación</li>
+<li><strong>Other</strong>: Otros tipos de recursos</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filtros-personalizados">Filtros personalizados<a href="#filtros-personalizados" class="hash-link" aria-label="Enlace directo al Filtros personalizados" title="Enlace directo al Filtros personalizados">​</a></h3>
+<ol>
+<li>Haz clic en el campo de búsqueda (🔍)</li>
+<li>Escribe para filtrar por:<!-- -->
+<ul>
+<li>Nombre de archivo: <code>logo.png</code></li>
+<li>Dominio: <code>google.com</code></li>
+<li>Tipo de contenido: <code>image/png</code></li>
+<li>Estado: <code>status:404</code></li>
+<li>Tamaño mayor que: <code>larger-than:100k</code>
+<img decoding="async" loading="lazy" alt="Panel Network" src="/Docusaurus/assets/images/red1-cff544249bd7ed37b7495792195da318.png" width="1440" height="1257" class="img_ev3q"></li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="examinar-archivos-individuales">Examinar archivos individuales<a href="#examinar-archivos-individuales" class="hash-link" aria-label="Enlace directo al Examinar archivos individuales" title="Enlace directo al Examinar archivos individuales">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="seleccionar-y-ver-un-archivo">Seleccionar y ver un archivo<a href="#seleccionar-y-ver-un-archivo" class="hash-link" aria-label="Enlace directo al Seleccionar y ver un archivo" title="Enlace directo al Seleccionar y ver un archivo">​</a></h3>
+<ol>
+<li>Haz clic en cualquier entrada de la lista de solicitudes</li>
+<li>Se abrirá un panel de detalles con varias pestañas</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="pestañas-principales">Pestañas principales<a href="#pestañas-principales" class="hash-link" aria-label="Enlace directo al Pestañas principales" title="Enlace directo al Pestañas principales">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="headers-cabeceras">Headers (Cabeceras)<a href="#headers-cabeceras" class="hash-link" aria-label="Enlace directo al Headers (Cabeceras)" title="Enlace directo al Headers (Cabeceras)">​</a></h4>
+<p>Muestra todas las cabeceras HTTP de la solicitud y respuesta:</p>
+<ul>
+<li><strong>General</strong>: URL, método, código de estado</li>
+<li><strong>Response Headers</strong>: Cabeceras enviadas por el servidor</li>
+<li><strong>Request Headers</strong>: Cabeceras enviadas por tu navegador</li>
+<li><strong>Query String Parameters</strong>: Parámetros en la URL</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="preview-vista-previa">Preview (Vista previa)<a href="#preview-vista-previa" class="hash-link" aria-label="Enlace directo al Preview (Vista previa)" title="Enlace directo al Preview (Vista previa)">​</a></h4>
+<p>Muestra una vista previa formateada del contenido:</p>
+<ul>
+<li><strong>JSON</strong>: Formateado y expandible</li>
+<li><strong>Imágenes</strong>: Muestra la imagen</li>
+<li><strong>HTML</strong>: Renderizado básico</li>
+<li><strong>CSS</strong>: Formateado con colores</li>
+<li><strong>JavaScript</strong>: Formateado con colores</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="response-respuesta">Response (Respuesta)<a href="#response-respuesta" class="hash-link" aria-label="Enlace directo al Response (Respuesta)" title="Enlace directo al Response (Respuesta)">​</a></h4>
+<p>Muestra el contenido sin procesar recibido del servidor:</p>
+<ul>
+<li>Para texto: contenido en texto plano</li>
+<li>Para datos binarios: representación hexadecimal</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="timing-tiempos">Timing (Tiempos)<a href="#timing-tiempos" class="hash-link" aria-label="Enlace directo al Timing (Tiempos)" title="Enlace directo al Timing (Tiempos)">​</a></h4>
+<p>Muestra una línea de tiempo detallada de la solicitud:</p>
+<ul>
+<li><strong>Queueing</strong>: Tiempo en cola</li>
+<li><strong>DNS Lookup</strong>: Tiempo de resolución DNS</li>
+<li><strong>Initial Connection</strong>: Tiempo de conexión TCP</li>
+<li><strong>SSL</strong>: Tiempo de negociación SSL/TLS</li>
+<li><strong>Request Sent</strong>: Tiempo de envío de la solicitud</li>
+<li><strong>Waiting (TTFB)</strong>: Tiempo hasta el primer byte</li>
+<li><strong>Content Download</strong>: Tiempo de descarga del contenido</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="interacción-con-los-archivos">Interacción con los archivos<a href="#interacción-con-los-archivos" class="hash-link" aria-label="Enlace directo al Interacción con los archivos" title="Enlace directo al Interacción con los archivos">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copiar-información">Copiar información<a href="#copiar-información" class="hash-link" aria-label="Enlace directo al Copiar información" title="Enlace directo al Copiar información">​</a></h3>
+<p>Haz clic derecho en cualquier solicitud para acceder a opciones como:</p>
+<ul>
+<li><strong>Copy URL</strong>: Copiar la URL del archivo</li>
+<li><strong>Copy Response</strong>: Copiar el contenido de la respuesta</li>
+<li><strong>Copy as Fetch</strong>: Copiar código JavaScript para reproducir la solicitud</li>
+<li><strong>Copy All as HAR</strong>: Exportar todas las solicitudes en formato HAR</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="guardar-archivos">Guardar archivos<a href="#guardar-archivos" class="hash-link" aria-label="Enlace directo al Guardar archivos" title="Enlace directo al Guardar archivos">​</a></h3>
+<ol>
+<li>Haz clic derecho en una solicitud</li>
+<li>Selecciona &quot;Save as...&quot; para guardar el archivo en tu computadora</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="abrir-en-nueva-pestaña">Abrir en nueva pestaña<a href="#abrir-en-nueva-pestaña" class="hash-link" aria-label="Enlace directo al Abrir en nueva pestaña" title="Enlace directo al Abrir en nueva pestaña">​</a></h3>
+<ol>
+<li>Haz clic derecho en una solicitud</li>
+<li>Selecciona &quot;Open in new tab&quot; para ver el recurso en una nueva pestaña</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ejercicios-prácticos">Ejercicios prácticos<a href="#ejercicios-prácticos" class="hash-link" aria-label="Enlace directo al Ejercicios prácticos" title="Enlace directo al Ejercicios prácticos">​</a></h2>
+<ol>
+<li>
+<p><strong>Analiza el HTML principal</strong>:</p>
+<ul>
+<li>Recarga una página web</li>
+<li>Busca la primera solicitud de tipo Document</li>
+<li>Examina su contenido en la pestaña Response</li>
+<li>Observa la estructura HTML básica</li>
+</ul>
+</li>
+<li>
+<p><strong>Inspecciona un archivo JavaScript</strong>:</p>
+<ul>
+<li>Filtra por JS</li>
+<li>Selecciona un archivo JavaScript</li>
+<li>Utiliza la pestaña Preview para ver el código formateado</li>
+<li>Intenta identificar funciones o características específicas</li>
+</ul>
+</li>
+<li>
+<p><strong>Examina una imagen</strong>:</p>
+<ul>
+<li>Filtra por Img</li>
+<li>Selecciona una imagen</li>
+<li>Observa su tamaño y tipo (PNG, JPEG, etc.)</li>
+<li>Utiliza la pestaña Preview para ver la imagen</li>
+<li>Verifica si está optimizada mirando su tamaño</li>
+</ul>
+</li>
+<li>
+<p><strong>Analiza una solicitud AJAX</strong>:</p>
+<ul>
+<li>Filtra por Fetch/XHR</li>
+<li>Interactúa con la página para generar una solicitud AJAX</li>
+<li>Examina los datos enviados y recibidos</li>
+</ul>
+</li>
+</ol>
+<p>El panel Network te permite &quot;mirar bajo el capó&quot; de cualquier página web, revelando todos los recursos que la componen y cómo interactúan entre sí. Esta visibilidad es invaluable para entender y solucionar problemas en sitios web modernos.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/devtools/network/ver-archivos.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Editar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/Docusaurus/docs/devtools/network/que-es-network"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">¿Qué es el panel Network?</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/Docusaurus/docs/devtools/network/analizar-respuestas"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Cómo analizar respuestas del servidor</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#cómo-iniciar-la-captura-de-solicitudes" class="table-of-contents__link toc-highlight">Cómo iniciar la captura de solicitudes</a></li><li><a href="#filtrar-y-organizar-solicitudes" class="table-of-contents__link toc-highlight">Filtrar y organizar solicitudes</a><ul><li><a href="#filtros-predeterminados" class="table-of-contents__link toc-highlight">Filtros predeterminados</a></li><li><a href="#filtros-personalizados" class="table-of-contents__link toc-highlight">Filtros personalizados</a></li></ul></li><li><a href="#examinar-archivos-individuales" class="table-of-contents__link toc-highlight">Examinar archivos individuales</a><ul><li><a href="#seleccionar-y-ver-un-archivo" class="table-of-contents__link toc-highlight">Seleccionar y ver un archivo</a></li><li><a href="#pestañas-principales" class="table-of-contents__link toc-highlight">Pestañas principales</a></li></ul></li><li><a href="#interacción-con-los-archivos" class="table-of-contents__link toc-highlight">Interacción con los archivos</a><ul><li><a href="#copiar-información" class="table-of-contents__link toc-highlight">Copiar información</a></li><li><a href="#guardar-archivos" class="table-of-contents__link toc-highlight">Guardar archivos</a></li><li><a href="#abrir-en-nueva-pestaña" class="table-of-contents__link toc-highlight">Abrir en nueva pestaña</a></li></ul></li><li><a href="#ejercicios-prácticos" class="table-of-contents__link toc-highlight">Ejercicios prácticos</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 DevTools, Celinda Cartolin</div></div></div></footer></div>
+</body>
+</html>
