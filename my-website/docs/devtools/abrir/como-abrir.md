@@ -10,6 +10,7 @@ Las Herramientas de Desarrollo están a solo un clic (o tecla) de distancia en c
 - **Firefox**: Haz clic en el menú hamburguesa (≡) → Más herramientas → Herramientas para desarrolladores
 - **Edge**: Haz clic en los tres puntos horizontales (⋯) → Más herramientas → Herramientas para desarrolladores
 - **Safari**: Menú Safari → Preferencias → Avanzado → Mostrar menú de desarrollo en la barra de menús, luego Desarrollo → Mostrar Inspector web
+![DevTools](/img/devtools.png)
 
 ### Método 2: Usando el menú contextual (más rápido)
 

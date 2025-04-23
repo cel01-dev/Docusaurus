@@ -32,6 +32,7 @@ Las propiedades desactivadas se muestran de diferentes maneras:
 - Con una línea tachada a través del texto
 - En color gris o más claro que las propiedades activas
 - A veces, con comentarios CSS (`/* */`) a su alrededor
+![Panel Style](/img/css.png)
 
 ## Ejercicios prácticos
 

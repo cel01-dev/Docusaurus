@@ -38,6 +38,7 @@ En la barra superior del panel Network encontrarás filtros rápidos:
    - Tipo de contenido: `image/png`
    - Estado: `status:404`
    - Tamaño mayor que: `larger-than:100k`
+![Panel Network](/img/red1.png)
 
 ## Examinar archivos individuales
 

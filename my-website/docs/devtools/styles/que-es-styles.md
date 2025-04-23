@@ -10,6 +10,7 @@ El panel Styles se encuentra en la parte derecha del panel Elements. Para accede
 2. Selecciona la pestaña "Elements"
 3. Selecciona cualquier elemento HTML en el árbol DOM
 4. Busca el panel "Styles" en la sección derecha (generalmente aparece por defecto)
+![Panel Style](/img/style.png)
 
 ## ¿Qué muestra el panel Styles?
 
@@ -42,6 +43,7 @@ Puedes filtrar propiedades escribiendo en el campo de filtro que aparece en la p
 ### 5. Modelo de caja (Box Model)
 
 En la parte inferior del panel encontrarás una representación visual del modelo de caja del elemento seleccionado, que muestra el contenido, padding, bordes y márgenes.
+![Panel Style](/img/style1.png)
 
 ## ¿Por qué es útil el panel Styles?
 

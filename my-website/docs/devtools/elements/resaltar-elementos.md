@@ -15,6 +15,7 @@ Hay varias formas de activar el inspector de elementos:
    - Windows/Linux: `Ctrl + Shift + C`
    - Mac: `Command + Option + C`
 3. Haz clic derecho en un elemento de la página y selecciona "Inspeccionar"
+![Inspector](/img/inspector.png)
 
 ### Cómo utilizar el inspector
 
@@ -24,6 +25,7 @@ Una vez activado el inspector:
 2. Aparecerá una descripción del elemento (etiqueta, clases, dimensiones)
 3. Haz clic en el elemento deseado para seleccionarlo en el panel Elements
 4. El código HTML correspondiente quedará seleccionado en el árbol DOM
+![Inspector](/img/inspector1.png)
 
 ## Visualización de elementos resaltados
 

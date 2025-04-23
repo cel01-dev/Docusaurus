@@ -39,6 +39,7 @@ DevTools incluye características inteligentes para ayudarte a agregar propiedad
 - **Selector de colores**: Para propiedades de color, se abrirá un selector de colores
 - **Selector de sombras**: Para propiedades como `box-shadow` o `text-shadow`
 - **Sugerencias de fuentes**: Lista de fuentes disponibles en la página
+![Panel Style](/img/css1.png)
 
 ## Ejercicios prácticos
 

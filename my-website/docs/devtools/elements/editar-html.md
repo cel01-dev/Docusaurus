@@ -18,6 +18,7 @@ Lo primero que debes saber es que **cualquier cambio que hagas en el panel Eleme
 1. Haz doble clic en una etiqueta HTML o en su contenido
 2. Realiza los cambios que desees
 3. Presiona Enter para confirmar o Esc para cancelar
+![Editar el html](/img/edicion-html1.png)
 
 ### 2. Edición del HTML como texto
 
@@ -25,6 +26,7 @@ Lo primero que debes saber es que **cualquier cambio que hagas en el panel Eleme
 2. Selecciona "Edit as HTML" (Editar como HTML)
 3. Se abrirá un campo de texto donde puedes editar todo el HTML del elemento
 4. Haz clic fuera del campo o presiona Ctrl+Enter para confirmar
+![Editar el html](/img/edicion-html.png)
 
 ### 3. Manipulación de elementos
 

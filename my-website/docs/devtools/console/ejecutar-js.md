@@ -10,6 +10,7 @@ La consola de DevTools no es solo para ver mensajes y errores, también es un en
 2. Verás un cursor parpadeante junto a un símbolo `>` (prompt)
 3. Escribe tu código JavaScript
 4. Presiona Enter para ejecutarlo
+![Panel Console](/img/console2.png)
 
 ### Sintaxis y ejecución
 

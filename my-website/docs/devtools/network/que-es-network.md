@@ -67,6 +67,7 @@ En la parte inferior del panel, encontrarás un resumen con:
 - Tiempo total de carga
 - Tiempo hasta que la página es interactiva (DOMContentLoaded)
 - Tiempo hasta que la página está completamente cargada (Load)
+![Panel Network](/img/red.png)
 
 ## ¿Por qué es importante el panel Network?
 

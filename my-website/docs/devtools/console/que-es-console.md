@@ -71,3 +71,4 @@ Cuando ejecutas código en la consola, tienes acceso a:
 - **Desarrollo más eficiente**: Valida suposiciones y prueba soluciones rápidamente
 
 En las siguientes secciones, aprenderás a utilizar la consola para analizar errores, ejecutar código JavaScript y sacar el máximo provecho de esta poderosa herramienta.
+![Panel Console](/img/console.png)

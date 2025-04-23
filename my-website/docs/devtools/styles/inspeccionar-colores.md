@@ -11,6 +11,7 @@ Cuando encuentras una propiedad CSS relacionada con colores (como `color`, `back
 1. Selecciona un elemento en el panel Elements
 2. En el panel Styles, encuentra una propiedad de color (aparecerá con un cuadrado de color)
 3. Haz clic en el cuadrado de color para abrir el selector
+![Panel Style](/img/css2.png)
 
 ## Características del selector de colores
 
@@ -37,6 +38,7 @@ El selector incluye varias herramientas:
 4. **Muestrario de colores**: Colores predefinidos y utilizados recientemente
 5. **Cuentagotas**: Para seleccionar colores de cualquier parte de la página
 6. **Vista previa**: Muestra el color original y el modificado para comparar
+![Panel Style](/img/css3.png)
 
 ## Trabajando con paletas de colores
 

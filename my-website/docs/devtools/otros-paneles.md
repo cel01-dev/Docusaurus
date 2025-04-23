@@ -19,7 +19,7 @@ El panel Application te permite inspeccionar y gestionar los datos que se almace
 2. Explora el menú lateral izquierdo para seleccionar el tipo de almacenamiento que deseas inspeccionar
 3. Para eliminar todos los datos almacenados, utiliza el botón "Clear storage"
 
-![Panel Application](/img/elements-panel.png)
+![Panel Application](/img/others.png)
 
 ## Panel Performance
 
@@ -39,7 +39,7 @@ El panel Performance te ayuda a analizar la eficiencia de tu sitio web y a ident
 4. Detén la grabación haciendo clic en "Stop"
 5. Analiza los resultados en las diferentes secciones del panel
 
-![Panel Performance](/img/elements-panel.png)
+![Panel Performance](/img/others1.png)
 
 ## Panel Memory
 
@@ -58,7 +58,7 @@ El panel Memory te permite monitorear el uso de memoria de tu aplicación web y 
 3. Haz clic en "Take snapshot" o "Start"
 4. Analiza los resultados para identificar objetos problemáticos
 
-![Panel Memory](/img/elements-panel.png)
+![Panel Memory](/img/others2.png)
 
 ## Panel Security
 
@@ -77,7 +77,7 @@ El panel Security te permite verificar la seguridad de tu sitio web, especialmen
 3. Haz clic en "View certificate" para ver detalles del certificado SSL/TLS
 4. Examina las advertencias sobre contenido mixto u otros problemas
 
-![Panel Security](/img/elements-panel.png)
+![Panel Security](/img/others3.png)
 
 ## Panel Lighthouse
 
@@ -97,7 +97,7 @@ Lighthouse es una herramienta automatizada para mejorar la calidad de tus págin
 4. Haz clic en "Generate report"
 5. Revisa los resultados y sigue las recomendaciones sugeridas
 
-![Panel Lighthouse](/img/elements-panel.png)
+![Panel Lighthouse](/img/others4.png)
 
 ## Panel Sources
 
@@ -118,7 +118,7 @@ El panel Sources es fundamental para depurar código JavaScript.
 4. Cuando la ejecución se detenga en un punto de interrupción, utiliza los controles de depuración para avanzar paso a paso
 5. Observa las variables en el panel lateral derecho
 
-![Panel Sources](/img/elements-panel.png)
+![Panel Sources](/img/others5.png)
 
 ## Conclusión
 

@@ -11,6 +11,7 @@ Cuando aparece un error en la consola, generalmente incluye:
 3. **Ubicación**: Archivo y número de línea donde ocurrió el error
 4. **Pila de llamadas (stack trace)**: La secuencia de funciones que llevaron al error
 5. **Código previo**: A veces muestra el fragmento de código problemático
+![Panel Console](/img/console1.png)
 
 ## Tipos comunes de errores
 
