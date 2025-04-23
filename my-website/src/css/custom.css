@@ -3,28 +3,49 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-
+ @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-background-color: #FFFFFF;
+  --ifm-color-primary: #F2509C;
+  --ifm-color-primary-dark: #D94A7E;
+  --ifm-color-primary-light: #F2A0B6;
+
+  --ifm-font-color-base: #1A1A1A;
+  --ifm-color-secondary: #52A5D9;
+  --ifm-link-color: #354B8C;
+
+  --ifm-navbar-background-color: #FFFFFF;
+  --ifm-navbar-shadow: #d3d3d3;
+  --ifm-footer-background-color: #F9F9F9;
+  --ifm-heading-color: #354B8C;
+
+  --ifm-alert-background-color: #F2A0B620;
+  --ifm-alert-border-color: #F2A0B6;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #1a1b27 !important;
+  --ifm-color-primary: #F2509C;
+  --ifm-color-primary-dark: #D94A7E;
+  --ifm-color-primary-light: #F2A0B6;
+
+  --ifm-font-color-base: #EFEFEF;
+  --ifm-color-secondary: #52A5D9;
+  --ifm-link-color: #F2A0B6;
+
+  --ifm-navbar-background-color: #1A1B27;
+  --ifm-navbar-shadow: #131313;
+  --ifm-footer-background-color: #0e43f2;
+  --ifm-heading-color: #F2A0B6;
+
+  --ifm-alert-background-color: #88707920;
+  --ifm-alert-border-color: #D94A7E;
+}
+.footer--dark {
+  --ifm-footer-background-color:var(--ifm-footer-background-color);
+}
+.navbar {
+  box-shadow: 0px 1px 2px var(--ifm-navbar-shadow);
 }
